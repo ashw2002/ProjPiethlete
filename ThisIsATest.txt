@@ -3,3 +3,5 @@
 This was modified on my desktop
 
 asighaerptgioaepghj
+
+This was modified in Godot after compatability renderer is selected
