@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://xqncw7fk7o30"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/CrowBehavior.gd" id="1_lix10"]
+[ext_resource type="Texture2D" uid="uid://rj7ihr35plv7" path="res://Resources/Sprites/CrowPlaceholder.png" id="1_um5u8"]
+[ext_resource type="Curve2D" uid="uid://vpoypbgecaw8" path="res://Resources/Scenes/Map1/Map1Curve2d.tres" id="3_yiom6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sfwiu"]
+radius = 33.0151
+
+[node name="CrowTemplate" type="RigidBody2D"]
+gravity_scale = 0.0
+max_contacts_reported = 10
+contact_monitor = true
+script = ExtResource("1_lix10")
+speed = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_um5u8")
+
+[node name="CrowPath" type="Path2D" parent="."]
+curve = ExtResource("3_yiom6")
+
+[node name="CrowLoc" type="PathFollow2D" parent="CrowPath"]
+position = Vector2(-729, -515)
+rotation = -0.00458292
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_sfwiu")
+debug_color = Color(2.88785e-06, 0.597464, 0.714374, 0.42)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_sfwiu")
+debug_color = Color(2.88785e-06, 0.597464, 0.714374, 0.42)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="test project"
+config/name="ProjPieThlete"
+run/main_scene="res://Resources/Scenes/Map1/Map1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
