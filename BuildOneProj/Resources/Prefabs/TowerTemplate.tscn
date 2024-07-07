@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bafcayi7milv2"]
+[gd_scene load_steps=5 format=3 uid="uid://bafcayi7milv2"]
 
 [ext_resource type="Script" path="res://Resources/Scripts/TowerBehavior.gd" id="1_1ntdl"]
 [ext_resource type="Texture2D" uid="uid://c31wfib7giqyc" path="res://Resources/Sprites/TowerPlaceHolder.png" id="1_sikfl"]
+[ext_resource type="PackedScene" uid="uid://dfxuvtqqs0axa" path="res://Resources/Prefabs/ProjectileTmplt.tscn" id="2_io1rf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kthk1"]
 
 [node name="TowerTemplate" type="Node2D"]
 script = ExtResource("1_1ntdl")
+ProjRef = ExtResource("2_io1rf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -22,3 +24,4 @@ shape = SubResource("CircleShape2D_kthk1")
 remote_path = NodePath("..")
 
 [connection signal="area_entered" from="TowerRange" to="." method="_on_tower_range_area_entered"]
+[connection signal="area_exited" from="TowerRange" to="." method="_on_tower_range_area_exited"]

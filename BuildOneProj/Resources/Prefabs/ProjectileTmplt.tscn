@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfxuvtqqs0axa"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/ProjectileBehavior.gd" id="1_87lgl"]
+[ext_resource type="Texture2D" uid="uid://bbiigi8765yot" path="res://Resources/Sprites/ProjectileTemp.png" id="1_cbn5q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wgqgg"]
+
+[node name="ProjectileTmplt" type="Area2D"]
+script = ExtResource("1_87lgl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(-1.803, 1.75)
+shape = SubResource("CircleShape2D_wgqgg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_cbn5q")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

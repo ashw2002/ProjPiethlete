@@ -1,6 +1,8 @@
 extends Area2D
 var crowLoc
 @export var speed = 1
+@export var maxHealth = 1
+var health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,6 +17,7 @@ func _process(delta):
 	position = crowLoc.position
 
 func OnCrowSpawn():
+	health = maxHealth
 	crowLoc.progress_ratio = 0
 	position = crowLoc.position
 
@@ -22,4 +25,8 @@ func OnCrowSpawn():
 func _on_area_entered(area):
 	if area.name == "EndZone":
 		#print_debug('ThisBetterWork')
+		queue_free()
+func TakeDamage(dam):
+	health -= dam
+	if health <= 0:
 		queue_free()

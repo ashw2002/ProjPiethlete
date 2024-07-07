@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2n7q"]
 size = Vector2(83, 93)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" groups=["Projectiles"]]
 script = ExtResource("1_a5ik6")
 CrowRef = ExtResource("2_g6igy")
 
