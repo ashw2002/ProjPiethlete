@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5y6bv0adtrr6"]
+[gd_scene load_steps=6 format=3 uid="uid://b5y6bv0adtrr6"]
 
 [ext_resource type="Texture2D" uid="uid://rw4ivwlxins3" path="res://Resources/Sprites/PlaceHolderMap1.png" id="1_1fry7"]
 [ext_resource type="Script" path="res://Resources/Scripts/MapController.gd" id="1_a5ik6"]
 [ext_resource type="PackedScene" uid="uid://xqncw7fk7o30" path="res://Resources/Prefabs/CrowTemplate.tscn" id="2_g6igy"]
+[ext_resource type="PackedScene" uid="uid://bafcayi7milv2" path="res://Resources/Prefabs/TowerTemplate.tscn" id="4_cqrt5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2n7q"]
 size = Vector2(83, 93)
@@ -27,3 +28,7 @@ disable_mode = 2
 [node name="EndZoneShape" type="CollisionShape2D" parent="EndZone"]
 position = Vector2(-2.5, -8.5)
 shape = SubResource("RectangleShape2D_p2n7q")
+
+[node name="TowerTemplate" parent="." groups=["Enemies"] instance=ExtResource("4_cqrt5")]
+position = Vector2(277, -416)
+TwrRng = 300.0

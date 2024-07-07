@@ -12,4 +12,5 @@ func _process(delta):
 
 func SpawnCrow(crowType):
 	var mob = crowType.instantiate()
+	mob.add_to_group("Enemies")
 	add_child(mob)

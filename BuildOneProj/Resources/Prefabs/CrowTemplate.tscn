@@ -7,12 +7,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfwiu"]
 radius = 33.0151
 
-[node name="CrowTemplate" type="RigidBody2D"]
-gravity_scale = 0.0
-max_contacts_reported = 10
-contact_monitor = true
+[node name="CrowTemplate" type="Area2D"]
 script = ExtResource("1_lix10")
-speed = 10
+speed = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -30,12 +27,4 @@ rotation = -0.00458292
 shape = SubResource("CircleShape2D_sfwiu")
 debug_color = Color(2.88785e-06, 0.597464, 0.714374, 0.42)
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_sfwiu")
-debug_color = Color(2.88785e-06, 0.597464, 0.714374, 0.42)
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
