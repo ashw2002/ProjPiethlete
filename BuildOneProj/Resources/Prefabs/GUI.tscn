@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://t0bhj8croa4q"]
+
+[ext_resource type="Texture2D" uid="uid://c31wfib7giqyc" path="res://Resources/Sprites/TowerPlaceHolder.png" id="1_1qpkk"]
+[ext_resource type="Script" path="res://Resources/Scripts/GUI_Controller.gd" id="1_b63kd"]
+[ext_resource type="Texture2D" uid="uid://rj7ihr35plv7" path="res://Resources/Sprites/CrowPlaceholder.png" id="2_psljo"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b63kd")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BlueButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_1qpkk")
+
+[node name="RedButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_psljo")
+
+[connection signal="pressed" from="HBoxContainer/BlueButton" to="." method="_on_texture_button_pressed"]
