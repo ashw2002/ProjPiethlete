@@ -8,6 +8,7 @@
 radius = 33.0151
 
 [node name="CrowTemplate" type="Area2D"]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_lix10")
 speed = 5
 
@@ -20,8 +21,8 @@ texture = ExtResource("1_um5u8")
 curve = ExtResource("3_yiom6")
 
 [node name="CrowLoc" type="PathFollow2D" parent="CrowPath"]
-position = Vector2(-729, -515)
-rotation = -0.00458292
+position = Vector2(34, 87)
+rotation = 0.00722009
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sfwiu")

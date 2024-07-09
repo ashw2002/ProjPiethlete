@@ -2,11 +2,15 @@ extends Area2D
 var crowLoc
 @export var speed = 1
 @export var maxHealth = 1
+@export var worth = 1
 var health
+var Mstr
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#print_debug("Start")
+	Mstr = get_tree().get_nodes_in_group("master")[0]
+	#print_debug(Mstr)
 	crowLoc = get_node("CrowPath/CrowLoc")
 	OnCrowSpawn()
 
@@ -29,4 +33,5 @@ func _on_area_entered(area):
 func TakeDamage(dam):
 	health -= dam
 	if health <= 0:
+		Mstr.ModifyMoney(worth)
 		queue_free()

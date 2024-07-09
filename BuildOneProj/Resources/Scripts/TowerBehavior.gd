@@ -3,13 +3,14 @@ extends Node2D
 @export var TwrRng = 1.0
 @export var ProjRef: PackedScene
 @export var secCool = 1.0
+@export var TwrDmg = 1.0
 var secRemain = 0
 var Targets = Array()
 var ColShape
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ColShape = get_node("TowerRange/RangeShape")
+	ColShape = get_child(1).get_child(0)
 	#print_debug(ColShape.shape.radius)
 	ColShape.shape.radius = TwrRng
 	#print_debug(ColShape.shape.radius)
@@ -23,6 +24,14 @@ func _process(delta):
 			secRemain = secCool
 	secRemain -= delta
 
+func ApplyStats(Rng,Cool, Dmg):
+	TwrRng = Rng
+	secCool = Cool
+	TwrDmg = Dmg
+
+func SetRange(rng):
+	TwrRng = rng
+	ColShape.shape.radius = TwrRng
 
 func _on_tower_range_area_entered(area):
 	#print_debug("NewTarget?")
