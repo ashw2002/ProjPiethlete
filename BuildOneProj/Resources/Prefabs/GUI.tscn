@@ -90,3 +90,10 @@ offset_top = -4.0
 offset_right = 397.0
 offset_bottom = 36.0
 text = "Money: 0"
+
+[connection signal="pressed" from="Control/HBoxContainer/Button0" to="." method="_on_button_0_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/Button5" to="." method="_on_button_5_pressed"]

@@ -14,3 +14,22 @@ func _process(delta):
 
 func UpdateMoney(Amt):
 	MonTxtRef.text = "Money: " + str(Amt)
+
+
+func _on_button_0_pressed():
+	Mstr.SelectTowerID(0)
+
+func _on_button_1_pressed():
+	Mstr.SelectTowerID(1)
+
+func _on_button_2_pressed():
+	Mstr.SelectTowerID(2)
+
+func _on_button_3_pressed():
+	Mstr.SelectTowerID(3)
+
+func _on_button_4_pressed():
+	Mstr.SelectTowerID(4)
+
+func _on_button_5_pressed():
+	pass # Replace with function body.

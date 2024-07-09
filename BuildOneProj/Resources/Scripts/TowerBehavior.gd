@@ -8,11 +8,15 @@ var secRemain = 0
 var Targets = Array()
 var ColShape
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ColShape = get_child(1).get_child(0)
+	ColShape = CollisionShape2D.new()
+	ColShape.shape = CircleShape2D.new()
+	#print_debug(ColShape.shape)
+	get_child(1).add_child(ColShape)
 	#print_debug(ColShape.shape.radius)
-	ColShape.shape.radius = TwrRng
+	ColShape.shape.set_radius(TwrRng)
 	#print_debug(ColShape.shape.radius)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,3 +55,4 @@ func ShootProjectile():
 	projectile.SetTarget(Targets[0])
 	projectile.add_to_group("Projectiles")
 	add_child(projectile)
+
