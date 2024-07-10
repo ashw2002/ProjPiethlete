@@ -21,8 +21,8 @@ texture = ExtResource("1_um5u8")
 curve = ExtResource("3_yiom6")
 
 [node name="CrowLoc" type="PathFollow2D" parent="CrowPath"]
-position = Vector2(34, 87)
-rotation = 0.00722009
+position = Vector2(-108, 94)
+rotation = -0.00102775
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sfwiu")

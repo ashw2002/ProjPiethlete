@@ -1,0 +1,9 @@
+{
+	"0":{
+		"name":"Crow",
+		"health":1,
+		"speed":1,
+		"worth":1,
+		"resistence":"none"
+	}
+}

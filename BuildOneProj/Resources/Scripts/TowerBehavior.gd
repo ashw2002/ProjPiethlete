@@ -4,6 +4,7 @@ extends Node2D
 @export var ProjRef: PackedScene
 @export var secCool = 1.0
 @export var TwrDmg = 1.0
+var dmgType
 var secRemain = 0
 var Targets = Array()
 var ColShape
@@ -28,10 +29,11 @@ func _process(delta):
 			secRemain = secCool
 	secRemain -= delta
 
-func ApplyStats(Rng,Cool, Dmg):
+func ApplyStats(Rng, Cool, Dmg, type):
 	TwrRng = Rng
 	secCool = Cool
 	TwrDmg = Dmg
+	dmgType = type
 
 func SetRange(rng):
 	TwrRng = rng

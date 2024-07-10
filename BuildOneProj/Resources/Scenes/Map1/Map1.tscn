@@ -26,7 +26,7 @@ position = Vector2(872, 736)
 disable_mode = 2
 
 [node name="EndZoneShape" type="CollisionShape2D" parent="EndZone"]
-position = Vector2(-2.5, -8.5)
+position = Vector2(1, 44)
 shape = SubResource("RectangleShape2D_p2n7q")
 
 [node name="Camera" parent="." instance=ExtResource("4_1b6fq")]

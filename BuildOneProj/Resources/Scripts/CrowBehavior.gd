@@ -3,6 +3,7 @@ var crowLoc
 @export var speed = 1
 @export var maxHealth = 1
 @export var worth = 1
+var resist
 var health
 var Mstr
 
@@ -25,6 +26,11 @@ func OnCrowSpawn():
 	crowLoc.progress_ratio = 0
 	position = crowLoc.position
 
+func setStats(hlth, spd, wth, rst):
+	maxHealth = hlth
+	speed = spd
+	worth = wth
+	resist = rst
 
 func _on_area_entered(area):
 	if area.name == "EndZone":
