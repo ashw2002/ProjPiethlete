@@ -32,6 +32,9 @@ func setStats(hlth, spd, wth, rst):
 	worth = wth
 	resist = rst
 
+func setPath(path):
+	get_child(1).curve = path
+
 func _on_area_entered(area):
 	if area.name == "EndZone":
 		#print_debug('ThisBetterWork')

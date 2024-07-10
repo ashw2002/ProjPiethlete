@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://xqncw7fk7o30" path="res://Resources/Prefabs/CrowTemplate.tscn" id="2_g6igy"]
 [ext_resource type="PackedScene" uid="uid://t0bhj8croa4q" path="res://Resources/Prefabs/GUI.tscn" id="4_1b6fq"]
 [ext_resource type="PackedScene" uid="uid://bafcayi7milv2" path="res://Resources/Prefabs/TowerTemplate.tscn" id="4_cqrt5"]
-[ext_resource type="Curve2D" uid="uid://bpphk5k1nhoj8" path="res://Resources/Scenes/Map2/Map2Curve2D.tres" id="6_8a021"]
+[ext_resource type="Curve2D" uid="uid://vpoypbgecaw8" path="res://Resources/Scenes/Map1/Map1Curve2d.tres" id="6_qxe3t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2n7q"]
 size = Vector2(83, 93)
@@ -33,4 +33,4 @@ shape = SubResource("RectangleShape2D_p2n7q")
 position = Vector2(576, 324)
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = ExtResource("6_8a021")
+curve = ExtResource("6_qxe3t")

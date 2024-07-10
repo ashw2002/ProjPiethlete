@@ -11,6 +11,8 @@ var LdTwrJson
 var LdCrowJson
 var LdMapJson
 var isPlacing = false
+var curMap = 1
+var mapPath
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,7 +21,9 @@ func _ready():
 	LdTwrJson = JSON.parse_string(FileAccess.open(TwrResrcFl, FileAccess.READ).get_as_text())
 	LdCrowJson = JSON.parse_string(FileAccess.open(CrwResrcFl, FileAccess.READ).get_as_text())
 	LdMapJson = JSON.parse_string(FileAccess.open(MapResrcFl, FileAccess.READ).get_as_text())
-	RunMap(0)
+	mapPath = load(LdMapJson[str(curMap)]["MapPath"])
+	RunMap(curMap)
+	
 	#print_debug(LdTwrJson["0"])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,6 +35,8 @@ func SpawnCrow(crowType):
 	var mob = CrowRef.instantiate()
 	mob.add_to_group("Enemies")
 	mob.setStats(StsToGrab["health"], StsToGrab["speed"], StsToGrab["worth"], StsToGrab["resistence"])
+	print_debug(mapPath)
+	mob.setPath(mapPath)
 	add_child(mob)
 
 func SpawnTower(TowerType,TwrPos):

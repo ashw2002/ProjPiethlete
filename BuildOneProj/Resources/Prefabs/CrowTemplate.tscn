@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://xqncw7fk7o30"]
+[gd_scene load_steps=4 format=3 uid="uid://xqncw7fk7o30"]
 
 [ext_resource type="Script" path="res://Resources/Scripts/CrowBehavior.gd" id="1_lix10"]
 [ext_resource type="Texture2D" uid="uid://rj7ihr35plv7" path="res://Resources/Sprites/CrowPlaceholder.png" id="1_um5u8"]
-[ext_resource type="Curve2D" uid="uid://vpoypbgecaw8" path="res://Resources/Scenes/Map1/Map1Curve2d.tres" id="3_yiom6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sfwiu"]
 radius = 33.0151
@@ -18,7 +17,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_um5u8")
 
 [node name="CrowPath" type="Path2D" parent="."]
-curve = ExtResource("3_yiom6")
 
 [node name="CrowLoc" type="PathFollow2D" parent="CrowPath"]
 position = Vector2(-108, 94)
