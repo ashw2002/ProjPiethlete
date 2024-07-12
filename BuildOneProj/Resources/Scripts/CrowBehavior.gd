@@ -21,6 +21,10 @@ func _process(delta):
 	crowLoc.progress += speed
 	position = crowLoc.position
 
+
+func _draw():
+	get_child(2).shape.draw(get_canvas_item(),Color(0,1,0,.01))
+
 func OnCrowSpawn():
 	health = maxHealth
 	crowLoc.progress_ratio = 0

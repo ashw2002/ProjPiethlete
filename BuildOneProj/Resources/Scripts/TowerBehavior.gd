@@ -4,20 +4,26 @@ extends Node2D
 @export var ProjRef: PackedScene
 @export var secCool = 1.0
 @export var TwrDmg = 1.0
+var textureObj
+var spriteObj
 var dmgType
 var secRemain = 0
 var Targets = Array()
 var ColShape
+var Drawn = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ColShape = CollisionShape2D.new()
 	ColShape.shape = CircleShape2D.new()
+	spriteObj = get_child(0)
+	spriteObj.texture = textureObj
 	#print_debug(ColShape.shape)
 	get_child(1).add_child(ColShape)
 	#print_debug(ColShape.shape.radius)
 	ColShape.shape.set_radius(TwrRng)
+	
 	#print_debug(ColShape.shape.radius)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,13 +34,20 @@ func _process(delta):
 			ShootProjectile()
 			secRemain = secCool
 	secRemain -= delta
+	#if !Drawn:
+		#DrawRange()
+		#Drawn=true
 
-func ApplyStats(Rng, Cool, Dmg, type):
+func _draw():
+	ColShape.shape.draw(get_canvas_item(),Color(1,0,0,.01))
+
+func ApplyStats(Rng, Cool, Dmg, type,TexObj):
 	TwrRng = Rng
 	secCool = Cool
 	TwrDmg = Dmg
 	dmgType = type
-
+	textureObj = TexObj
+	
 func SetRange(rng):
 	TwrRng = rng
 	ColShape.shape.radius = TwrRng
@@ -55,6 +68,6 @@ func _on_tower_range_area_exited(area):
 func ShootProjectile():
 	var projectile = ProjRef.instantiate()
 	projectile.SetTarget(Targets[0])
+	projectile.SetDamage(TwrDmg)
 	projectile.add_to_group("Projectiles")
 	add_child(projectile)
-

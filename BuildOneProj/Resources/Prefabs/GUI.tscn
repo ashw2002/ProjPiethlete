@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://t0bhj8croa4q"]
+[gd_scene load_steps=7 format=3 uid="uid://t0bhj8croa4q"]
 
 [ext_resource type="Texture2D" uid="uid://c31wfib7giqyc" path="res://Resources/Sprites/TowerPlaceHolder.png" id="1_1qpkk"]
 [ext_resource type="Script" path="res://Resources/Scripts/GUI_Controller.gd" id="1_b63kd"]
 [ext_resource type="Texture2D" uid="uid://rj7ihr35plv7" path="res://Resources/Sprites/CrowPlaceholder.png" id="2_psljo"]
+[ext_resource type="Texture2D" uid="uid://bkaw7ojd7jwmm" path="res://Resources/Sprites/TowerPlaceHolder2.png" id="4_im3rx"]
 [ext_resource type="Texture2D" uid="uid://bbiigi8765yot" path="res://Resources/Sprites/ProjectileTemp.png" id="4_kmwk4"]
+[ext_resource type="Texture2D" uid="uid://bsla1xawi7ng" path="res://Resources/Sprites/TowerPlaceHolder3.png" id="5_5wbuo"]
 
 [node name="Camera" type="Camera2D"]
 texture_filter = 1
@@ -38,35 +40,30 @@ alignment = 1
 layout_mode = 2
 texture_normal = ExtResource("1_1qpkk")
 texture_pressed = ExtResource("4_kmwk4")
-texture_hover = ExtResource("2_psljo")
 stretch_mode = 5
 
 [node name="Button1" type="TextureButton" parent="Control/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_1qpkk")
+texture_normal = ExtResource("4_im3rx")
 texture_pressed = ExtResource("4_kmwk4")
-texture_hover = ExtResource("2_psljo")
 stretch_mode = 5
 
 [node name="Button2" type="TextureButton" parent="Control/HBoxContainer"]
 layout_mode = 2
-texture_normal = ExtResource("1_1qpkk")
+texture_normal = ExtResource("5_5wbuo")
 texture_pressed = ExtResource("4_kmwk4")
-texture_hover = ExtResource("2_psljo")
 stretch_mode = 5
 
 [node name="Button3" type="TextureButton" parent="Control/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_1qpkk")
 texture_pressed = ExtResource("4_kmwk4")
-texture_hover = ExtResource("2_psljo")
 stretch_mode = 5
 
 [node name="Button4" type="TextureButton" parent="Control/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("1_1qpkk")
 texture_pressed = ExtResource("4_kmwk4")
-texture_hover = ExtResource("2_psljo")
 stretch_mode = 5
 
 [node name="Button5" type="TextureButton" parent="Control/HBoxContainer"]

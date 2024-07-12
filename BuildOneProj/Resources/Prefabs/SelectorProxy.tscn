@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv27x7aajgpxg"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/ProxyBehavior.gd" id="1_7nrm0"]
+[ext_resource type="Texture2D" uid="uid://c31wfib7giqyc" path="res://Resources/Sprites/TowerPlaceHolder.png" id="2_yclb7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_37x4v"]
+radius = 159.022
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2a3q"]
+radius = 17.0
+
+[node name="SelectorProxy" type="Node2D"]
+script = ExtResource("1_7nrm0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_yclb7")
+
+[node name="RangeRep" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangeRep"]
+shape = SubResource("CircleShape2D_37x4v")
+
+[node name="PhysRep" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysRep"]
+shape = SubResource("CircleShape2D_s2a3q")
+debug_color = Color(0.659969, 0, 0.328362, 0.42)
+
+[connection signal="area_entered" from="PhysRep" to="." method="_on_phys_rep_area_entered"]
+[connection signal="area_exited" from="PhysRep" to="." method="_on_phys_rep_area_exited"]

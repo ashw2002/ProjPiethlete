@@ -6,7 +6,8 @@
 		"dmg":10,
 		"type":"phys",
 		"AOE":false,
-		"cost":10 
+		"cost":10,
+		"sprite":"res://Resources/Sprites/TowerPlaceHolder.png"
 	},
 	"1":{
 		"name":"Cowcrow",
@@ -15,7 +16,8 @@
 		"dmg":10,
 		"type":"phys",
 		"AOE":false,
-		"cost":10 
+		"cost":10 ,
+		"sprite":"res://Resources/Sprites/TowerPlaceHolder2.png"
 	},
 	"2":{
 		"name":"Wizcrow",
@@ -24,7 +26,8 @@
 		"dmg":10,
 		"type":"mag",
 		"AOE":false,
-		"cost":10 
+		"cost":10,
+		"sprite":"res://Resources/Sprites/TowerPlaceHolder3.png"
 	},
 	"3":{
 		"name":"Boomcrow",
@@ -33,7 +36,8 @@
 		"dmg":10,
 		"type":"phys",
 		"AOE":true,
-		"cost":10 
+		"cost":10,
+		"sprite":""
 	},
 	"4":{
 		"name":"Blizzcrow",
@@ -42,6 +46,7 @@
 		"dmg":10,
 		"type":"mag",
 		"AOE":true,
-		"cost":10 
+		"cost":10,
+		"sprite":""
 	}
 }
