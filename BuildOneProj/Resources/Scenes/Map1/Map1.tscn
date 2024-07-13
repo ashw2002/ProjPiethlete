@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5y6bv0adtrr6"]
+[gd_scene load_steps=10 format=3 uid="uid://b5y6bv0adtrr6"]
 
-[ext_resource type="Texture2D" uid="uid://rw4ivwlxins3" path="res://Resources/Sprites/PlaceHolderMap1.png" id="1_1fry7"]
 [ext_resource type="Script" path="res://Resources/Scripts/MapController.gd" id="1_a5ik6"]
 [ext_resource type="PackedScene" uid="uid://xqncw7fk7o30" path="res://Resources/Prefabs/CrowTemplate.tscn" id="2_g6igy"]
+[ext_resource type="Texture2D" uid="uid://boncku5qjsnov" path="res://Resources/Sprites/cornfield map2 7112024.png" id="4_0k8u1"]
 [ext_resource type="PackedScene" uid="uid://t0bhj8croa4q" path="res://Resources/Prefabs/GUI.tscn" id="4_1b6fq"]
 [ext_resource type="PackedScene" uid="uid://bafcayi7milv2" path="res://Resources/Prefabs/TowerTemplate.tscn" id="4_cqrt5"]
 [ext_resource type="PackedScene" uid="uid://bv27x7aajgpxg" path="res://Resources/Prefabs/SelectorProxy.tscn" id="6_l4gsh"]
+[ext_resource type="Curve2D" uid="uid://vpoypbgecaw8" path="res://Resources/Scenes/Map1/Map1Curve2d.tres" id="7_vo3l0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2n7q"]
 size = Vector2(83, 93)
@@ -20,12 +21,12 @@ TwrRef = ExtResource("4_cqrt5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(585, 483)
-scale = Vector2(0.79, 0.75)
-texture = ExtResource("1_1fry7")
+position = Vector2(577, 358.5)
+scale = Vector2(0.502604, 0.571759)
+texture = ExtResource("4_0k8u1")
 
 [node name="EndZone" type="Area2D" parent="."]
-position = Vector2(872, 736)
+position = Vector2(892, 699)
 disable_mode = 2
 
 [node name="EndZoneShape" type="CollisionShape2D" parent="EndZone"]
@@ -41,12 +42,15 @@ position = Vector2(576, 324)
 position = Vector2(8, 65)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Unplacable"]
-polygon = PackedVector2Array(0, 1, 888, -1, 890, 220, 120, 221, 120, 339, 891, 341, 894, 572, 1157, 574, 1158, 895, -3, 896, -2, 575, 829, 574, 828, 385, 59, 387, 60, 160, 822, 166, 820, 55, 1, 55)
+polygon = PackedVector2Array(-8, -19, 917, -12, 914, 195, 109, 199, 112, 290, 917, 292, 918, 605, 1126, 603, 1126, 885, -3, 896, -6, 606, 849, 605, 851, 346, 58, 342, 58, 153, 843, 149, 844, 44, -8, 44)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Unplacable"]
 position = Vector2(-8, -65)
-polygon = PackedVector2Array(-1, -2, 4, 964, 1167, 963, 1165, 636, 1029, 637, 1025, 62, 935, 61, 935, -1, 1368, 1, 1367, 1090, -199, 1084, -190, -2)
+polygon = PackedVector2Array(-1, -2, 4, 964, 1167, 963, 1161, 670, 1027, 663, 1025, 62, 935, 61, 935, -1, 1368, 1, 1367, 1090, -199, 1084, -190, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Unplacable"]
 position = Vector2(579.5, -139.75)
 shape = SubResource("RectangleShape2D_rliw2")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = ExtResource("7_vo3l0")
