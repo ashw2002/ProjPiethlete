@@ -24,7 +24,7 @@
 		"range":200,
 		"cool":5,
 		"dmg":10,
-		"type":"mag",
+		"type":"magi",
 		"AOE":false,
 		"cost":10,
 		"sprite":"res://Resources/Sprites/TowerPlaceHolder3.png"
@@ -43,8 +43,8 @@
 		"name":"Blizzcrow",
 		"range":200,
 		"cool":5,
-		"dmg":10,
-		"type":"mag",
+		"dmg":1,
+		"type":"ice",
 		"AOE":true,
 		"cost":10,
 		"sprite":""

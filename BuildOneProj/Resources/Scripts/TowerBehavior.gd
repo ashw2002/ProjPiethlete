@@ -11,12 +11,14 @@ var secRemain = 0
 var Targets = Array()
 var ColShape
 var Drawn = false
+var Mstr
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ColShape = CollisionShape2D.new()
 	ColShape.shape = CircleShape2D.new()
+	Mstr = get_tree().get_nodes_in_group("master")[0]
 	spriteObj = get_child(0)
 	spriteObj.texture = textureObj
 	#print_debug(ColShape.shape)
@@ -68,6 +70,7 @@ func _on_tower_range_area_exited(area):
 func ShootProjectile():
 	var projectile = ProjRef.instantiate()
 	projectile.SetTarget(Targets[0])
+	projectile.SetType(dmgType)
 	projectile.SetDamage(TwrDmg)
 	projectile.add_to_group("Projectiles")
 	add_child(projectile)

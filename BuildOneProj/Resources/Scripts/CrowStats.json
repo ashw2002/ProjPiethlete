@@ -1,9 +1,42 @@
 {
 	"0":{
 		"name":"Crow",
-		"health":1,
+		"health":5,
 		"speed":1,
 		"worth":1,
-		"resistence":"none"
+		"resistence":"none",
+		"sprite":""
+	},
+	"1":{
+		"name":"FatCrow",
+		"health":10,
+		"speed":0.75,
+		"worth":2,
+		"resistence":"none",
+		"sprite":""
+	},
+	"2":{
+		"name":"MetalCrow",
+		"health":5,
+		"speed":0.75,
+		"worth":2,
+		"resistence":"phys",
+		"sprite":""
+	},
+	"3":{
+		"name":"FatMetalCrow",
+		"health":15,
+		"speed":0.5,
+		"worth":4,
+		"resistence":"phys",
+		"sprite":""
+	},
+	"4":{
+		"name":"GlowieCrow",
+		"health":10,
+		"speed":1.5,
+		"worth":4,
+		"resistence":"magi",
+		"sprite":""
 	}
 }

@@ -1,6 +1,5 @@
 extends Node2D
 
-var radius = 1000.0
 var rangeRep
 var image
 var canPlace = true
@@ -11,7 +10,6 @@ func _ready():
 	image = get_child(0)
 	image.self_modulate.a = .5
 	rangeRep = get_child(1).get_child(0)
-	rangeRep.shape.radius = radius
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -43,7 +43,7 @@ func _on_area_entered(area):
 	if area.name == "EndZone":
 		#print_debug('ThisBetterWork')
 		queue_free()
-func TakeDamage(dam):
+func TakeDamage(dam,typ):
 	health -= dam
 	if health <= 0:
 		Mstr.ModifyMoney(worth)
