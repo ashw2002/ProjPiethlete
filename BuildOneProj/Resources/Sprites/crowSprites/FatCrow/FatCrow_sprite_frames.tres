@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bre4e6b7ksixn"]
+
+[ext_resource type="Texture2D" uid="uid://c7peogx4fyesg" path="res://Resources/Sprites/crowSprites/FatCrow/FatCrow-sheet.png" id="1_8y6oo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6okiw"]
+atlas = ExtResource("1_8y6oo")
+region = Rect2(0, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6d86"]
+atlas = ExtResource("1_8y6oo")
+region = Rect2(3000, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ayad"]
+atlas = ExtResource("1_8y6oo")
+region = Rect2(4500, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqg7e"]
+atlas = ExtResource("1_8y6oo")
+region = Rect2(1500, 0, 1500, 1500)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6okiw")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6d86")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ayad")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqg7e")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]

@@ -3,7 +3,7 @@
 		"MapScene":"res://Resources/Scenes/Map1/Map1.tscn",
 		"MapPath":"res://Resources/Scenes/Map1/Map1Curve2d.tres",
 		"NumWaves":2,
-		"wave0":[0,0,0,0,0,0,0,0,0,0],
+		"wave0":[0,1,2,3,4,0,0,0,0,0],
 		"wave1":[0,0,0,0,0,0,0,0,0,0,0,0]
 	},
 	"2":{

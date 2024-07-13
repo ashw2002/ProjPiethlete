@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://t0bhj8croa4q"]
+[gd_scene load_steps=10 format=3 uid="uid://t0bhj8croa4q"]
 
 [ext_resource type="Texture2D" uid="uid://c31wfib7giqyc" path="res://Resources/Sprites/TowerPlaceHolder.png" id="1_1qpkk"]
 [ext_resource type="Script" path="res://Resources/Scripts/GUI_Controller.gd" id="1_b63kd"]
+[ext_resource type="Texture2D" uid="uid://buqpuv0xinhqh" path="res://Resources/Sprites/ScarcrowSprites/scarecrow-Selector.png" id="2_cem8b"]
 [ext_resource type="Texture2D" uid="uid://rj7ihr35plv7" path="res://Resources/Sprites/CrowPlaceholder.png" id="2_psljo"]
-[ext_resource type="Texture2D" uid="uid://bkaw7ojd7jwmm" path="res://Resources/Sprites/TowerPlaceHolder2.png" id="4_im3rx"]
+[ext_resource type="Texture2D" uid="uid://cnpbkbbcmb0o0" path="res://Resources/Sprites/ScarcrowSprites/cowboy-Selector.png" id="4_auwfn"]
 [ext_resource type="Texture2D" uid="uid://bbiigi8765yot" path="res://Resources/Sprites/ProjectileTemp.png" id="4_kmwk4"]
-[ext_resource type="Texture2D" uid="uid://bsla1xawi7ng" path="res://Resources/Sprites/TowerPlaceHolder3.png" id="5_5wbuo"]
+[ext_resource type="Texture2D" uid="uid://bfhrlranjvjtl" path="res://Resources/Sprites/ScarcrowSprites/wizard-Selector.png" id="5_jj1s8"]
+[ext_resource type="Texture2D" uid="uid://bm1rab67n83in" path="res://Resources/Sprites/ScarcrowSprites/cannoneer-selector.png" id="6_hqn6h"]
+[ext_resource type="Texture2D" uid="uid://dgsf37vkd2rjm" path="res://Resources/Sprites/ScarcrowSprites/ice-Selector.png" id="7_3eri2"]
 
 [node name="Camera" type="Camera2D"]
 texture_filter = 1
@@ -28,6 +31,7 @@ grow_vertical = 2
 scale = Vector2(0.75, 0.75)
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(32, 0)
 layout_mode = 0
 offset_left = 659.0
 offset_top = -403.0
@@ -37,41 +41,74 @@ scale = Vector2(4, 4)
 alignment = 1
 
 [node name="Button0" type="TextureButton" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture_normal = ExtResource("1_1qpkk")
+tooltip_text = "Standard Scarecrow
+Moderate Speed
+Moderate Phys Damage
+Cost: TBD"
+texture_normal = ExtResource("2_cem8b")
 texture_pressed = ExtResource("4_kmwk4")
-stretch_mode = 5
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Button1" type="TextureButton" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture_normal = ExtResource("4_im3rx")
+tooltip_text = "Scarecrow with a .22
+High Speed
+Low Phys Damage
+Cost: TBD"
+texture_normal = ExtResource("4_auwfn")
 texture_pressed = ExtResource("4_kmwk4")
-stretch_mode = 5
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Button2" type="TextureButton" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture_normal = ExtResource("5_5wbuo")
+tooltip_text = "Wizard Scarecrow
+Moderate Speed
+Moderate Magic Damage
+Cost: TBD"
+texture_normal = ExtResource("5_jj1s8")
 texture_pressed = ExtResource("4_kmwk4")
-stretch_mode = 5
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Button3" type="TextureButton" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture_normal = ExtResource("1_1qpkk")
+tooltip_text = "Scarecrow with a Massive cannon
+Very Slow Speed
+Very High Phys Damage
+Cost: TBD"
+texture_normal = ExtResource("6_hqn6h")
 texture_pressed = ExtResource("4_kmwk4")
-stretch_mode = 5
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Button4" type="TextureButton" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
-texture_normal = ExtResource("1_1qpkk")
+tooltip_text = "Snowball Scarecrow
+Slow Speed
+Very Low Snow Damage
+Cost: TBD"
+texture_normal = ExtResource("7_3eri2")
 texture_pressed = ExtResource("4_kmwk4")
-stretch_mode = 5
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Button5" type="TextureButton" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+tooltip_text = "Deselect your current tower selection"
 texture_normal = ExtResource("1_1qpkk")
 texture_pressed = ExtResource("4_kmwk4")
 texture_hover = ExtResource("2_psljo")
-stretch_mode = 5
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="Control" type="Control" parent="Control"]
 anchors_preset = 0
@@ -80,13 +117,36 @@ offset_top = -383.0
 offset_right = 631.0
 offset_bottom = -343.0
 
-[node name="TextLabel" type="Label" parent="Control/Control"]
+[node name="MoneyLabel" type="Label" parent="Control/Control"]
 layout_mode = 0
 offset_left = 297.0
 offset_top = -4.0
 offset_right = 397.0
 offset_bottom = 36.0
 text = "Money: 0"
+
+[node name="HealthLabel" type="Label" parent="Control/Control"]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 12.0
+offset_right = 376.0
+offset_bottom = 36.0
+text = "Health: 20"
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -141.0
+offset_top = -82.0
+offset_right = -101.0
+offset_bottom = -42.0
+scale = Vector2(3.88, 3.48)
+
+[node name="YOULOSE" type="Label" parent="Control2"]
+layout_mode = 0
+offset_right = 82.0
+offset_bottom = 27.0
+text = "YOU LOSE"
 
 [connection signal="pressed" from="Control/HBoxContainer/Button0" to="." method="_on_button_0_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]

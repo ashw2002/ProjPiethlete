@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://4prljcv5vf2n"]
+
+[ext_resource type="Texture2D" uid="uid://dgtdcr4q8uahd" path="res://Resources/Sprites/crowSprites/MetalCrow/Metal-sheet.png" id="1_7x3od"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kkqp"]
+atlas = ExtResource("1_7x3od")
+region = Rect2(0, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8eg5"]
+atlas = ExtResource("1_7x3od")
+region = Rect2(3000, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vby36"]
+atlas = ExtResource("1_7x3od")
+region = Rect2(4500, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wb2f"]
+atlas = ExtResource("1_7x3od")
+region = Rect2(1500, 0, 1500, 1500)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kkqp")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8eg5")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vby36")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wb2f")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]

@@ -2,6 +2,7 @@ extends Node
 @export var CrowRef: PackedScene
 @export var TwrRef: PackedScene
 var money = 0
+var PlayerHealth = 20
 var CamRef
 var TwrResrcFl = "res://Resources/Scripts/TowerStats.json"
 var CrwResrcFl = "res://Resources/Scripts/CrowStats.json"
@@ -14,7 +15,8 @@ var isPlacing = false
 var curMap = 1
 var mapPath
 var SelProxy
-var TexList
+var TwrTexList
+var CrwTexList
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	CamRef = $Camera
@@ -24,7 +26,8 @@ func _ready():
 	LdCrowJson = JSON.parse_string(FileAccess.open(CrwResrcFl, FileAccess.READ).get_as_text())
 	LdMapJson = JSON.parse_string(FileAccess.open(MapResrcFl, FileAccess.READ).get_as_text())
 	mapPath = load(LdMapJson[str(curMap)]["MapPath"])
-	TexList = [load(LdTwrJson[str(0)]["sprite"]),load(LdTwrJson[str(1)]["sprite"]),load(LdTwrJson[str(2)]["sprite"])]
+	TwrTexList = [load(LdTwrJson[str(0)]["sprite"]),load(LdTwrJson[str(1)]["sprite"]),load(LdTwrJson[str(2)]["sprite"]),load(LdTwrJson[str(3)]["sprite"]),load(LdTwrJson[str(4)]["sprite"])]
+	CrwTexList = [load(LdCrowJson[str(0)]["sprite"]),load(LdCrowJson[str(1)]["sprite"]),load(LdCrowJson[str(2)]["sprite"]),load(LdCrowJson[str(3)]["sprite"]),load(LdCrowJson[str(4)]["sprite"])]
 	RunMap(curMap)
 	
 	#print_debug(LdTwrJson["0"])
@@ -37,7 +40,7 @@ func SpawnCrow(crowType):
 	var StsToGrab = LdCrowJson[str(crowType)]
 	var mob = CrowRef.instantiate()
 	mob.add_to_group("Enemies")
-	mob.setStats(StsToGrab["health"], StsToGrab["speed"], StsToGrab["worth"], StsToGrab["resistence"])
+	mob.setStats(StsToGrab["health"], StsToGrab["speed"], StsToGrab["worth"], StsToGrab["resistence"], CrwTexList[crowType])
 	#print_debug(mapPath)
 	mob.setPath(mapPath)
 	add_child(mob)
@@ -48,7 +51,7 @@ func SpawnTower(TowerType,TwrPos):
 	if StsToGrab["cost"] <= money:
 		ModifyMoney(StsToGrab["cost"] * -1)
 		var TmpTwr = TwrRef.instantiate()
-		TmpTwr.ApplyStats(StsToGrab["range"],StsToGrab["cool"],StsToGrab["dmg"], StsToGrab["type"], TexList[TowerType])
+		TmpTwr.ApplyStats(StsToGrab["range"],StsToGrab["cool"],StsToGrab["dmg"], StsToGrab["type"], TwrTexList[TowerType])
 		TmpTwr.position = TwrPos
 		add_child(TmpTwr)
 
@@ -71,7 +74,7 @@ func SelectTowerID(id):
 	SelProxy.deactivate()
 	SelTwr = id
 	isPlacing = true
-	SelProxy.activate(LdTwrJson[str(id)]["range"],TexList[id])
+	SelProxy.activate(LdTwrJson[str(id)]["range"],TwrTexList[id])
 
 func SpawnWave(MapID, WaveID):
 	var MapStats =LdMapJson[str(MapID)]
@@ -88,3 +91,14 @@ func RunMap(MapID):
 		#print_debug("Waiting for 30 sec")
 		await get_tree().create_timer(30).timeout
 		#print_debug("Done Waiting")
+
+func Deselect():
+	isPlacing = false
+	SelProxy.deactivate()
+
+func LoseHealth():
+	PlayerHealth -= 1
+	CamRef.UpdateHealth(PlayerHealth)
+	if PlayerHealth <= 0:
+		CamRef.Lose()
+		get_tree().paused = true

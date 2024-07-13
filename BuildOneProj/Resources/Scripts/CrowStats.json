@@ -5,7 +5,7 @@
 		"speed":1,
 		"worth":1,
 		"resistence":"none",
-		"sprite":""
+		"sprite":"res://Resources/Sprites/crowSprites/Crow/crow_sprite_frames.tres"
 	},
 	"1":{
 		"name":"FatCrow",
@@ -13,7 +13,7 @@
 		"speed":0.75,
 		"worth":2,
 		"resistence":"none",
-		"sprite":""
+		"sprite":"res://Resources/Sprites/crowSprites/FatCrow/FatCrow_sprite_frames.tres"
 	},
 	"2":{
 		"name":"MetalCrow",
@@ -21,7 +21,7 @@
 		"speed":0.75,
 		"worth":2,
 		"resistence":"phys",
-		"sprite":""
+		"sprite":"res://Resources/Sprites/crowSprites/MetalCrow/MetalCrow_sprite_frames.tres"
 	},
 	"3":{
 		"name":"FatMetalCrow",
@@ -29,7 +29,7 @@
 		"speed":0.5,
 		"worth":4,
 		"resistence":"phys",
-		"sprite":""
+		"sprite":"res://Resources/Sprites/crowSprites/FatMetalCrow/FatMetalCrow_sprite_frames.tres"
 	},
 	"4":{
 		"name":"GlowieCrow",
@@ -37,6 +37,6 @@
 		"speed":1.5,
 		"worth":4,
 		"resistence":"magi",
-		"sprite":""
+		"sprite":"res://Resources/Sprites/crowSprites/Glowie/Glowie_sprite_frames.tres"
 	}
 }

@@ -1,0 +1,59 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://blpyu7pxnwxab"]
+
+[ext_resource type="Texture2D" uid="uid://bm2osysg7dj4r" path="res://Resources/Sprites/crowSprites/Crow/Crow-sheet.png" id="1_4xslu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghlir"]
+atlas = ExtResource("1_4xslu")
+region = Rect2(0, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0liu"]
+atlas = ExtResource("1_4xslu")
+region = Rect2(3000, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkwxj"]
+atlas = ExtResource("1_4xslu")
+region = Rect2(4500, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwm8e"]
+atlas = ExtResource("1_4xslu")
+region = Rect2(1500, 0, 1500, 1500)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghlir")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0liu")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkwxj")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwm8e")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

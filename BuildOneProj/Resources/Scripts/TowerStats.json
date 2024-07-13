@@ -7,7 +7,7 @@
 		"type":"phys",
 		"AOE":false,
 		"cost":10,
-		"sprite":"res://Resources/Sprites/TowerPlaceHolder.png"
+		"sprite":"res://Resources/Sprites/ScarcrowSprites/scarecrow.png"
 	},
 	"1":{
 		"name":"Cowcrow",
@@ -17,17 +17,17 @@
 		"type":"phys",
 		"AOE":false,
 		"cost":10 ,
-		"sprite":"res://Resources/Sprites/TowerPlaceHolder2.png"
+		"sprite":"res://Resources/Sprites/ScarcrowSprites/cowboy.png"
 	},
 	"2":{
 		"name":"Wizcrow",
 		"range":200,
-		"cool":5,
+		"cool":0.1,
 		"dmg":10,
 		"type":"magi",
 		"AOE":false,
 		"cost":10,
-		"sprite":"res://Resources/Sprites/TowerPlaceHolder3.png"
+		"sprite":"res://Resources/Sprites/ScarcrowSprites/wizard.png"
 	},
 	"3":{
 		"name":"Boomcrow",
@@ -37,7 +37,7 @@
 		"type":"phys",
 		"AOE":true,
 		"cost":10,
-		"sprite":""
+		"sprite":"res://Resources/Sprites/ScarcrowSprites/cannoneer.png"
 	},
 	"4":{
 		"name":"Blizzcrow",
@@ -47,6 +47,6 @@
 		"type":"ice",
 		"AOE":true,
 		"cost":10,
-		"sprite":""
+		"sprite":"res://Resources/Sprites/ScarcrowSprites/ice.png"
 	}
 }

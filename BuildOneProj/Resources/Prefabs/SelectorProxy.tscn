@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bv27x7aajgpxg"]
 
 [ext_resource type="Script" path="res://Resources/Scripts/ProxyBehavior.gd" id="1_7nrm0"]
-[ext_resource type="Texture2D" uid="uid://c31wfib7giqyc" path="res://Resources/Sprites/TowerPlaceHolder.png" id="2_yclb7"]
+[ext_resource type="Texture2D" uid="uid://clmfv75l7g6en" path="res://Resources/Sprites/ScarcrowSprites/scarecrow.png" id="2_q3kui"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_37x4v"]
 radius = 159.022
@@ -14,7 +14,9 @@ script = ExtResource("1_7nrm0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_yclb7")
+position = Vector2(0, -12)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_q3kui")
 
 [node name="RangeRep" type="Area2D" parent="."]
 

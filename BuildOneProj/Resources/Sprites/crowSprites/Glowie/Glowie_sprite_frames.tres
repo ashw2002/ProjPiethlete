@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dqr6bur46hvcl"]
+
+[ext_resource type="Texture2D" uid="uid://f87mb4qilv6t" path="res://Resources/Sprites/crowSprites/Glowie/Glowie-sheet.png" id="1_e72p2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tctcw"]
+atlas = ExtResource("1_e72p2")
+region = Rect2(0, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwm42"]
+atlas = ExtResource("1_e72p2")
+region = Rect2(3000, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8iuk"]
+atlas = ExtResource("1_e72p2")
+region = Rect2(4500, 0, 1500, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tluow"]
+atlas = ExtResource("1_e72p2")
+region = Rect2(1500, 0, 1500, 1500)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tctcw")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwm42")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8iuk")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tluow")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]

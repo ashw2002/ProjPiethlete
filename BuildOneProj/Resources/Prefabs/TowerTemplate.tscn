@@ -2,15 +2,19 @@
 
 [ext_resource type="Script" path="res://Resources/Scripts/TowerBehavior.gd" id="1_1ntdl"]
 [ext_resource type="PackedScene" uid="uid://dfxuvtqqs0axa" path="res://Resources/Prefabs/ProjectileTmplt.tscn" id="2_io1rf"]
-[ext_resource type="Texture2D" uid="uid://c31wfib7giqyc" path="res://Resources/Sprites/TowerPlaceHolder.png" id="3_p61fl"]
+[ext_resource type="Texture2D" uid="uid://2j7tklh84bw7" path="res://Resources/Sprites/ScarcrowSprites/cannoneer.png" id="3_8das6"]
 
 [node name="TowerTemplate" type="Node2D"]
+rotation = 1.5708
 script = ExtResource("1_1ntdl")
 ProjRef = ExtResource("2_io1rf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("3_p61fl")
+position = Vector2(-12, 0)
+rotation = -1.5708
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("3_8das6")
 
 [node name="TowerRange" type="Area2D" parent="."]
 
