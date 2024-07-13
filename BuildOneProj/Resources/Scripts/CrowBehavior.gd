@@ -27,9 +27,6 @@ func _process(delta):
 	position = crowLoc.position
 
 
-func _draw():
-	get_child(2).shape.draw(get_canvas_item(),Color(0,1,0,.01))
-
 func OnCrowSpawn():
 	health = maxHealth
 	crowLoc.progress_ratio = 0
@@ -61,7 +58,6 @@ func TakeDamage(dam,typ):
 
 func PointForward():
 	var posDelta = crowLoc.position - position
-	print_debug(posDelta)
 	if abs(posDelta.x) > abs(posDelta.y):
 		if posDelta.x > 0:
 			AnmSprt.animation = "Right"

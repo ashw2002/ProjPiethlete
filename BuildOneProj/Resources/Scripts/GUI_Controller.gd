@@ -10,6 +10,7 @@ func _ready():
 	HlthTxtRef = $Control/Control/HealthLabel
 	Mstr = get_tree().get_nodes_in_group("master")[0]
 	LoseText = get_child(1)
+	LoseText.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
