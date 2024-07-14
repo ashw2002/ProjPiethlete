@@ -3,12 +3,14 @@ extends Node
 var Mstr
 var MonTxtRef
 var HlthTxtRef
+var WavTxtRef
 var LoseText
 var menu
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	MonTxtRef = $Control/Control/MoneyLabel
 	HlthTxtRef = $Control/Control/HealthLabel
+	WavTxtRef = $Control/Control/WaveLabel
 	menu = $MainMenu
 	Mstr = get_tree().get_nodes_in_group("master")[0]
 	LoseText = get_child(1)
@@ -26,10 +28,15 @@ func UpdateMoney(Amt):
 
 func UpdateHealth(Amt):
 	HlthTxtRef.text = "Health: " + str(Amt)
+	
+func UpdateWaves(Num):
+	WavTxtRef.text = "Wave: " + str(Num+1) + "/20"
 
 func Lose():
 	LoseText.visible = true
-
+func Win():
+	LoseText.text = "YOU WIN"
+	LoseText.visible = true
 func _on_button_0_pressed():
 	Mstr.SelectTowerID(0)
 

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bfhrlranjvjtl" path="res://Resources/Sprites/ScarcrowSprites/wizard-Selector.png" id="5_jj1s8"]
 [ext_resource type="Texture2D" uid="uid://bm1rab67n83in" path="res://Resources/Sprites/ScarcrowSprites/cannoneer-selector.png" id="6_hqn6h"]
 [ext_resource type="Texture2D" uid="uid://dgsf37vkd2rjm" path="res://Resources/Sprites/ScarcrowSprites/ice-Selector.png" id="7_3eri2"]
-[ext_resource type="Texture2D" uid="uid://bd1rk753uvcal" path="res://Resources/Sprites/MainMenu/corn-83783_1280.jpg" id="10_4hk68"]
+[ext_resource type="Texture2D" uid="uid://bdiakdx8l7xbl" path="res://Resources/Sprites/MainMenu/AverageOhioTuesday.jpg" id="10_pbsel"]
 
 [node name="Camera" type="Camera2D"]
 texture_filter = 1
@@ -48,7 +48,7 @@ layout_mode = 2
 tooltip_text = "Standard Scarecrow
 Moderate Speed
 Moderate Phys Damage
-Cost: TBD"
+Cost: 10"
 texture_normal = ExtResource("2_cem8b")
 texture_pressed = ExtResource("4_kmwk4")
 ignore_texture_size = true
@@ -60,7 +60,7 @@ layout_mode = 2
 tooltip_text = "Scarecrow with a .22
 High Speed
 Low Phys Damage
-Cost: TBD"
+Cost: 15"
 texture_normal = ExtResource("4_auwfn")
 texture_pressed = ExtResource("4_kmwk4")
 ignore_texture_size = true
@@ -72,7 +72,7 @@ layout_mode = 2
 tooltip_text = "Wizard Scarecrow
 Moderate Speed
 Moderate Magic Damage
-Cost: TBD"
+Cost: 30"
 texture_normal = ExtResource("5_jj1s8")
 texture_pressed = ExtResource("4_kmwk4")
 ignore_texture_size = true
@@ -84,7 +84,7 @@ layout_mode = 2
 tooltip_text = "Scarecrow with a Massive cannon
 Very Slow Speed
 Very High Phys Damage
-Cost: TBD"
+Cost: 60"
 texture_normal = ExtResource("6_hqn6h")
 texture_pressed = ExtResource("4_kmwk4")
 ignore_texture_size = true
@@ -96,7 +96,7 @@ layout_mode = 2
 tooltip_text = "Snowball Scarecrow
 Slow Speed
 Very Low Snow Damage
-Cost: TBD"
+Cost: 50"
 texture_normal = ExtResource("7_3eri2")
 texture_pressed = ExtResource("4_kmwk4")
 ignore_texture_size = true
@@ -135,6 +135,14 @@ offset_right = 376.0
 offset_bottom = 36.0
 text = "Health: 20"
 
+[node name="WaveLabel" type="Label" parent="Control/Control"]
+layout_mode = 0
+offset_left = 298.333
+offset_top = 32.3333
+offset_right = 383.333
+offset_bottom = 55.3333
+text = "Wave: 0/20"
+
 [node name="Control2" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -160,14 +168,14 @@ offset_bottom = 40.0
 [node name="Sprite2D" type="Sprite2D" parent="MainMenu"]
 position = Vector2(-0.999958, -0.500008)
 scale = Vector2(0.9, 0.789024)
-texture = ExtResource("10_4hk68")
+texture = ExtResource("10_pbsel")
 
 [node name="StartGame" type="Button" parent="MainMenu"]
 layout_mode = 0
 offset_left = -120.0
-offset_top = 94.0
+offset_top = 118.0
 offset_right = 117.0
-offset_bottom = 181.0
+offset_bottom = 205.0
 text = "Start Game"
 
 [connection signal="pressed" from="Control/HBoxContainer/Button0" to="." method="_on_button_0_pressed"]

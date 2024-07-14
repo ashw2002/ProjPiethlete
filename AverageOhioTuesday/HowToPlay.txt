@@ -1,0 +1,47 @@
+Hello!  Thank yo for checking out Average Ohio Tuesday!
+
+The game is a small scale tower defense game made by Ash and Ted.  
+
+Its not what we were aiming for, but for a couple of amatures learning a completely new engine, I think it turned out pretty alright.
+
+The main clarifications I want to make are about the enemies,  you will encounter 5 in total
+
+Regular crows are small black birds that won't take too much punishment before you can shoot them down.
+
+Fat Crows have double the health of regular crows
+
+Metal Shiny Crows take Half Physical damage, so having at least one wizard scarecrow is a good idea when you can afford it.  
+
+Yellow Glowie crows are fast and resist magic damage, so don't spam too many wizards or these guys are going to fly straight through.
+
+Fat metal crows also exist, they're just the tankiest of the crows.
+
+I'll admit, I have no idea how balanced this game is as I kinda rushed it in the end, but should you decompile this project (or check out the github here:https://github.com/ashw2002/ProjPiethlete),
+then there are JSON files that should be pretty straight forward in the scripts folder.  
+
+Thank you very much for giving us a shot!
+
+
+
+Art by Ted (with noted exceptions)
+Code by Ash (No exceptions but oh boy, it's alot of spaghetti)
+
+Main Menu assets
+Main menu was GIMPed together by Ash
+https://pixabay.com/vectors/wizard-scarecrow-man-bowing-35032/ (Colored By Brodie)
+https://pixabay.com/photos/corn-field-rural-sky-autumn-83783/
+https://pixabay.com/vectors/beretta-pistol-gun-handgun-weapon-906612/
+https://pixabay.com/vectors/vintage-sketch-cartoon-animal-1824834/
+
+Scarecrow Shooting noise:
+https://pixabay.com/sound-effects/22-caliber-with-ricochet-39679/
+
+Map Textures:
+https://opengameart.org/content/hand-painted-grass
+https://opengameart.org/content/simple-seamless-tiles-of-dirt-and-sand
+
+Music: 
+Creator Boombox - INeedMusic.co
+Western African - Kai Loop
+Western African - Prey Loop
+

@@ -1,9 +1,9 @@
 {
 	"0":{
 		"name":"Scarecrow",
-		"range":500,
-		"cool":1,
-		"dmg":10,
+		"range":200,
+		"cool":2,
+		"dmg":15,
 		"type":"phys",
 		"AOE":false,
 		"cost":10,
@@ -11,42 +11,42 @@
 	},
 	"1":{
 		"name":"Cowcrow",
-		"range":200,
-		"cool":5,
-		"dmg":10,
+		"range":150,
+		"cool":0.5,
+		"dmg":7,
 		"type":"phys",
 		"AOE":false,
-		"cost":10 ,
+		"cost":15 ,
 		"sprite":"res://Resources/Sprites/ScarcrowSprites/cowboy.png"
 	},
 	"2":{
 		"name":"Wizcrow",
 		"range":200,
-		"cool":0.1,
-		"dmg":10,
+		"cool":2.5,
+		"dmg":25,
 		"type":"magi",
 		"AOE":false,
-		"cost":10,
+		"cost":30,
 		"sprite":"res://Resources/Sprites/ScarcrowSprites/wizard.png"
 	},
 	"3":{
 		"name":"Boomcrow",
-		"range":200,
+		"range":300,
 		"cool":5,
-		"dmg":10,
+		"dmg":50,
 		"type":"phys",
 		"AOE":true,
-		"cost":10,
+		"cost":60,
 		"sprite":"res://Resources/Sprites/ScarcrowSprites/cannoneer.png"
 	},
 	"4":{
 		"name":"Blizzcrow",
-		"range":200,
+		"range":100,
 		"cool":5,
 		"dmg":1,
 		"type":"ice",
 		"AOE":true,
-		"cost":10,
+		"cost":50,
 		"sprite":"res://Resources/Sprites/ScarcrowSprites/ice.png"
 	}
 }

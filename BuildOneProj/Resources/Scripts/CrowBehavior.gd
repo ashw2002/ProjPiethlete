@@ -8,7 +8,7 @@ var health
 var Mstr
 var AnmSprt
 var SprtFrms
-
+var IsSlowed = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#print_debug("Start")
@@ -19,10 +19,16 @@ func _ready():
 	AnmSprt.sprite_frames = SprtFrms
 	OnCrowSpawn()
 
+func _draw():
+	if IsSlowed:
+		get_child(2).shape.draw(get_canvas_item(),Color(0,0,1,.1))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	crowLoc.progress += speed
+	if IsSlowed:
+		crowLoc.progress += speed/2
+	else:
+		crowLoc.progress += speed
 	PointForward()
 	position = crowLoc.position
 
@@ -55,6 +61,9 @@ func TakeDamage(dam,typ):
 	if health <= 0:
 		Mstr.ModifyMoney(worth)
 		queue_free()
+	if typ == "ice":
+		IsSlowed = true
+		queue_redraw()
 
 func PointForward():
 	var posDelta = crowLoc.position - position

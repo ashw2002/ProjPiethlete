@@ -18,12 +18,13 @@ var SelProxy
 var TwrTexList
 var CrwTexList
 var NoiMkr
+var WaveSpawning = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	CamRef = $Camera
 	SelProxy = $SelectorProxy
 	NoiMkr = $AudioStreamPlayer2D
-	ModifyMoney(2000)
+	ModifyMoney(25)
 	LdTwrJson = JSON.parse_string(FileAccess.open(TwrResrcFl, FileAccess.READ).get_as_text())
 	LdCrowJson = JSON.parse_string(FileAccess.open(CrwResrcFl, FileAccess.READ).get_as_text())
 	LdMapJson = JSON.parse_string(FileAccess.open(MapResrcFl, FileAccess.READ).get_as_text())
@@ -35,7 +36,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass #print_debug(get_viewport().get_mouse_position())
+	if !NoiMkr.playing:
+		NoiMkr.playing = true 
 
 func SpawnCrow(crowType):
 	var StsToGrab = LdCrowJson[str(crowType)]
@@ -58,10 +60,10 @@ func SpawnTower(TowerType,TwrPos):
 
 func _input(event):
 	#print_debug("InputDetected")
-	if event.is_action_pressed("SpacePress"):
+	#if event.is_action_pressed("SpacePress"):
 		#print_debug("SpawningCrow")
-		SpawnCrow(0)
-	elif event.is_action_pressed("LeftClick") && isPlacing:
+	#	SpawnCrow(0)
+	if event.is_action_pressed("LeftClick") && isPlacing:
 		#print_debug("Spawning Tower")
 		if SelProxy.isPlacable():
 			SpawnTower(SelTwr, get_viewport().get_mouse_position())
@@ -78,22 +80,33 @@ func SelectTowerID(id):
 	SelProxy.activate(LdTwrJson[str(id)]["range"],TwrTexList[id])
 
 func SpawnWave(MapID, WaveID):
-	var MapStats =LdMapJson[str(MapID)]
+	var MapStats = LdMapJson[str(MapID)]
 	#print_debug(MapStats[WaveID])
-	for i in range(MapStats[WaveID].size()):
-		SpawnCrow(MapStats[WaveID][i])
+	print_debug("Spawning wave" + str(WaveID))
+	WaveSpawning = true
+	var SpawnOrder = MapStats[WaveID]
+	SpawnOrder.shuffle()
+	for i in range(SpawnOrder.size()):
+		SpawnCrow(SpawnOrder[i])
 		await get_tree().create_timer(1).timeout
+	WaveSpawning = false
 		
 func RunMap(MapID):
 	var MapStats = LdMapJson[str(MapID)]
-	NoiMkr.stream = load("res://Resources/BGM/WesternAfrican - Prey Loop.wav")
+	NoiMkr.stream = load("res://Resources/BGM/COMP_WesternAfrican - Prey Loop.mp3")
 	NoiMkr.playing = true
 	for i in range(MapStats["NumWaves"]):
 		#print_debug("Spawning Wave: " + str(i))
+		CamRef.UpdateWaves(i)
 		SpawnWave(MapID, "wave" + str(i))
 		#print_debug("Waiting for 30 sec")
-		await get_tree().create_timer(30).timeout
+		while WaveSpawning:
+			print_debug("Waiting")
+			await get_tree().create_timer(1).timeout
+		print_debug("Wave Break")
+		await get_tree().create_timer(15).timeout
 		#print_debug("Done Waiting")
+	CamRef.Win()
 
 func Deselect():
 	isPlacing = false
