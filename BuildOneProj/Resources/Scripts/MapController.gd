@@ -17,10 +17,12 @@ var mapPath
 var SelProxy
 var TwrTexList
 var CrwTexList
+var NoiMkr
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	CamRef = $Camera
 	SelProxy = $SelectorProxy
+	NoiMkr = $AudioStreamPlayer2D
 	ModifyMoney(2000)
 	LdTwrJson = JSON.parse_string(FileAccess.open(TwrResrcFl, FileAccess.READ).get_as_text())
 	LdCrowJson = JSON.parse_string(FileAccess.open(CrwResrcFl, FileAccess.READ).get_as_text())
@@ -28,7 +30,6 @@ func _ready():
 	mapPath = load(LdMapJson[str(curMap)]["MapPath"])
 	TwrTexList = [load(LdTwrJson[str(0)]["sprite"]),load(LdTwrJson[str(1)]["sprite"]),load(LdTwrJson[str(2)]["sprite"]),load(LdTwrJson[str(3)]["sprite"]),load(LdTwrJson[str(4)]["sprite"])]
 	CrwTexList = [load(LdCrowJson[str(0)]["sprite"]),load(LdCrowJson[str(1)]["sprite"]),load(LdCrowJson[str(2)]["sprite"]),load(LdCrowJson[str(3)]["sprite"]),load(LdCrowJson[str(4)]["sprite"])]
-	RunMap(curMap)
 	
 	#print_debug(LdTwrJson["0"])
 
@@ -85,6 +86,8 @@ func SpawnWave(MapID, WaveID):
 		
 func RunMap(MapID):
 	var MapStats = LdMapJson[str(MapID)]
+	NoiMkr.stream = load("res://Resources/BGM/WesternAfrican - Prey Loop.wav")
+	NoiMkr.playing = true
 	for i in range(MapStats["NumWaves"]):
 		#print_debug("Spawning Wave: " + str(i))
 		SpawnWave(MapID, "wave" + str(i))

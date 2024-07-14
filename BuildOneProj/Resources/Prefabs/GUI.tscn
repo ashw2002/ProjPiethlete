@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://t0bhj8croa4q"]
+[gd_scene load_steps=11 format=3 uid="uid://t0bhj8croa4q"]
 
 [ext_resource type="Texture2D" uid="uid://c31wfib7giqyc" path="res://Resources/Sprites/TowerPlaceHolder.png" id="1_1qpkk"]
 [ext_resource type="Script" path="res://Resources/Scripts/GUI_Controller.gd" id="1_b63kd"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bfhrlranjvjtl" path="res://Resources/Sprites/ScarcrowSprites/wizard-Selector.png" id="5_jj1s8"]
 [ext_resource type="Texture2D" uid="uid://bm1rab67n83in" path="res://Resources/Sprites/ScarcrowSprites/cannoneer-selector.png" id="6_hqn6h"]
 [ext_resource type="Texture2D" uid="uid://dgsf37vkd2rjm" path="res://Resources/Sprites/ScarcrowSprites/ice-Selector.png" id="7_3eri2"]
+[ext_resource type="Texture2D" uid="uid://bd1rk753uvcal" path="res://Resources/Sprites/MainMenu/corn-83783_1280.jpg" id="10_4hk68"]
 
 [node name="Camera" type="Camera2D"]
 texture_filter = 1
@@ -156,9 +157,24 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Sprite2D" type="Sprite2D" parent="MainMenu"]
+position = Vector2(-0.999958, -0.500008)
+scale = Vector2(0.9, 0.789024)
+texture = ExtResource("10_4hk68")
+
+[node name="StartGame" type="Button" parent="MainMenu"]
+layout_mode = 0
+offset_left = -120.0
+offset_top = 94.0
+offset_right = 117.0
+offset_bottom = 181.0
+text = "Start Game"
+
 [connection signal="pressed" from="Control/HBoxContainer/Button0" to="." method="_on_button_0_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="button_down" from="MainMenu/StartGame" to="." method="_on_start_game_button_down"]
+[connection signal="pressed" from="MainMenu/StartGame" to="." method="_on_star_game_pressed"]

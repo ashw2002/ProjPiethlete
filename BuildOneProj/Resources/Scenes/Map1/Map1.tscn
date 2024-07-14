@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5y6bv0adtrr6"]
+[gd_scene load_steps=11 format=3 uid="uid://b5y6bv0adtrr6"]
 
 [ext_resource type="Script" path="res://Resources/Scripts/MapController.gd" id="1_a5ik6"]
 [ext_resource type="PackedScene" uid="uid://xqncw7fk7o30" path="res://Resources/Prefabs/CrowTemplate.tscn" id="2_g6igy"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bafcayi7milv2" path="res://Resources/Prefabs/TowerTemplate.tscn" id="4_cqrt5"]
 [ext_resource type="PackedScene" uid="uid://bv27x7aajgpxg" path="res://Resources/Prefabs/SelectorProxy.tscn" id="6_l4gsh"]
 [ext_resource type="Curve2D" uid="uid://vpoypbgecaw8" path="res://Resources/Scenes/Map1/Map1Curve2d.tres" id="7_vo3l0"]
+[ext_resource type="AudioStream" uid="uid://0vym5c7ffl6d" path="res://Resources/SFX/22-caliber-with-ricochet-39679.mp3" id="8_rrvkk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2n7q"]
 size = Vector2(83, 93)
@@ -54,3 +55,12 @@ shape = SubResource("RectangleShape2D_rliw2")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = ExtResource("7_vo3l0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(578, 327)
+stream = ExtResource("8_rrvkk")
+autoplay = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(576, 324)
+current = true

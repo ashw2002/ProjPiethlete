@@ -12,7 +12,7 @@ var Targets = Array()
 var ColShape
 var Drawn = false
 var Mstr
-
+var NoiMkr
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +21,7 @@ func _ready():
 	Mstr = get_tree().get_nodes_in_group("master")[0]
 	spriteObj = get_child(0)
 	spriteObj.texture = textureObj
+	NoiMkr = get_child(2)
 	#print_debug(ColShape.shape)
 	get_child(1).add_child(ColShape)
 	#print_debug(ColShape.shape.radius)
@@ -74,3 +75,4 @@ func ShootProjectile():
 	projectile.SetDamage(TwrDmg)
 	projectile.add_to_group("Projectiles")
 	add_child(projectile)
+	NoiMkr.play()
